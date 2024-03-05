@@ -1,18 +1,23 @@
 name: Meu primeiro Workflow no Github Actions
 
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  workflow_dispatch:
 
 jobs:
-  job01:
+  test_job:
+    name: Executando o Job de Teste
     runs-on: self-hosted   
     steps:
-      - uses: actions/checkout@v3      
-      - name: Run a one-line script
+      - name: Step 1
+      - uses: actions/checkout@v2      
         run: echo Olá, turma da disciplina Github Actions!
+        
+      - name: Step 2
+        run: echo "Olá, turma da disciplina Github Actions! step 2"
+        
+      - name: Step 3
+        run: echo "Olá, turma da disciplina Github Actions! step 3"
+        
+      - name: Step 4
+        run: echo "Olá, turma da disciplina Github Actions! step 4"
